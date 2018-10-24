@@ -6,9 +6,9 @@ import java.io.IOException;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.jos.dem.fasthub.appium.service.LoginService;
+import com.jos.dem.fasthub.appium.service.HomeService;
 
-public class LoginServiceImpl implements LoginService {
+public class HomeServiceImpl implements HomeService {
 
   private File path = new File("src/main/res/app-release.apk");
 

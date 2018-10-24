@@ -20,20 +20,20 @@ import cucumber.api.java.en.When;
 
 import io.appium.java_client.AppiumDriver;
 
-import com.jos.dem.fasthub.appium.service.LoginService;
-import com.jos.dem.fasthub.appium.service.impl.LoginServiceImpl;
+import com.jos.dem.fasthub.appium.service.HomeService;
+import com.jos.dem.fasthub.appium.service.impl.HomeServiceImpl;
 
-public class LoginStep {
+public class HomeStep {
 
   private AppiumDriver driver;
   private DesiredCapabilities capabilities = new DesiredCapabilities();
-  private LoginService loginService = new LoginServiceImpl();
+  private HomeService homeService = new HomeServiceImpl();
 
   private Logger log = Logger.getLogger(this.getClass().getName());
 
   @Before
   public void setup() throws Exception {
-    loginService.setCapabilities(capabilities);
+    homeService.setCapabilities(capabilities);
   }
 
   @When("I launch the application")
@@ -43,9 +43,9 @@ public class LoginStep {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  @Then("I should be able to see all login options")
+  @Then("I should be able to see recent activities")
   public void shouldDisplayCategories() throws Exception {
-    log.info("Running: I should be able to see all login options at " + new Date());
+    log.info("Running: I should be able to see recent activities at " + new Date());
   }
 
   @After

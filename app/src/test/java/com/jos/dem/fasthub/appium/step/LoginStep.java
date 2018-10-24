@@ -20,20 +20,20 @@ import cucumber.api.java.en.When;
 
 import io.appium.java_client.AppiumDriver;
 
-import com.jos.dem.appium.fasthub.service.LoginService;
-import com.jos.dem.appium.fasthub.service.impl.LoginServiceImpl;
+import com.jos.dem.fasthub.appium.service.LoginService;
+import com.jos.dem.fasthub.appium.service.impl.LoginServiceImpl;
 
-public class CategoryStep {
+public class LoginStep {
 
   private AppiumDriver driver;
   private DesiredCapabilities capabilities = new DesiredCapabilities();
   private LoginService loginService = new LoginServiceImpl();
 
-  private Logger log = Logger.getLogger(CategoryStep.class.getName());
+  private Logger log = Logger.getLogger(this.getClass().getName());
 
   @Before
-  public void setup(){
-    categoryService.setCapabilities(capabilities);
+  public void setup() throws Exception {
+    loginService.setCapabilities(capabilities);
   }
 
   @When("I launch the application")

@@ -1,6 +1,6 @@
 package com.jos.dem.fasthub.appium.step;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -46,6 +46,8 @@ public class HomeStep {
   @Then("I should be able to see recent activities")
   public void shouldDisplayCategories() throws Exception {
     log.info("Running: I should be able to see recent activities at " + new Date());
+    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/action_bar_root"));
+    assertNotNull(driver.findElementsByAccessibilityId("android:id/navigationBarBackground"));
   }
 
   @After

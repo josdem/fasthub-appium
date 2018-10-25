@@ -14,9 +14,6 @@ import cucumber.api.java.en.When;
 
 import io.appium.java_client.AppiumDriver;
 
-import com.jos.dem.fasthub.appium.service.ActivityService;
-import com.jos.dem.fasthub.appium.service.impl.ActivityServiceImpl;
-
 public class ActivityStep extends BaseStep {
 
   private AppiumDriver driver;

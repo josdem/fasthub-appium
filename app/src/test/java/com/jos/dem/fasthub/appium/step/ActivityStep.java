@@ -20,20 +20,20 @@ import cucumber.api.java.en.When;
 
 import io.appium.java_client.AppiumDriver;
 
-import com.jos.dem.fasthub.appium.service.HomeService;
-import com.jos.dem.fasthub.appium.service.impl.HomeServiceImpl;
+import com.jos.dem.fasthub.appium.service.ActivityService;
+import com.jos.dem.fasthub.appium.service.impl.ActivityServiceImpl;
 
-public class HomeStep {
+public class ActivityStep {
 
   private AppiumDriver driver;
   private DesiredCapabilities capabilities = new DesiredCapabilities();
-  private HomeService homeService = new HomeServiceImpl();
+  private ActivityService activityService = new ActivityServiceImpl();
 
   private Logger log = Logger.getLogger(this.getClass().getName());
 
   @Before
   public void setup() throws Exception {
-    homeService.setCapabilities(capabilities);
+    activityService.setCapabilities(capabilities);
   }
 
   @When("I launch the application")

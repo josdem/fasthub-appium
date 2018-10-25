@@ -16,7 +16,7 @@ Feature testing using Appium for a popular GitHub client FastHub
 
 #### This Project Tests this Project
 
-https://github.com/k0shk0sh/FastHub
+[FastHub](https://github.com/k0shk0sh/FastHub)
 
 **To run the project**
 

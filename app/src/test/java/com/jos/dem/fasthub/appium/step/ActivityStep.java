@@ -50,8 +50,11 @@ public class ActivityStep {
     assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/action_bar_root"));
     assertNotNull(driver.findElementsByAccessibilityId("android:id/navigationBarBackground"));
     assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/container") != null);
-    log.info("ActivityStep: container exist, let's review activities");
+
+    log.info("ActivityStep: Container exist, let's get at least one activity");
     assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/avatar"));
+    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/title"));
+    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/date"));
   }
 
   @After

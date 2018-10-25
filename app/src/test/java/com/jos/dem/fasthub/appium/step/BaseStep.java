@@ -9,6 +9,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.AppiumDriver;
 
+import com.jos.dem.fasthub.appium.service.AppiumService;
+import com.jos.dem.fasthub.appium.service.impl.AppiumServiceImpl;
+
 public class BaseStep {
 
   private static AppiumDriver<WebElement> driver;

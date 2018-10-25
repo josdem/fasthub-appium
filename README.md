@@ -18,7 +18,7 @@ Feature testing using Appium for a popular GitHub client FastHub
 
 https://github.com/k0shk0sh/FastHub
 
-#### To Run the Project
+**To run the project**
 
 ```bash
 gradle test

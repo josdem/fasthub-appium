@@ -23,3 +23,7 @@ Feature testing using Appium for a popular GitHub client FastHub
 ```bash
 gradle test
 ```
+
+**Read this as reference**
+
+* http://josdem.io/techtalk/android/appium_automation/

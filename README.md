@@ -14,7 +14,7 @@ Feature testing using Appium for a popular GitHub client FastHub
 * [Junit 5](https://junit.org/junit5/)
 
 
-#### This Project Tests this Project
+**Target project**
 
 [FastHub](https://github.com/k0shk0sh/FastHub)
 

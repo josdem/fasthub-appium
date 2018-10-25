@@ -1,5 +1,6 @@
 package com.jos.dem.fasthub.appium.step;
 
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.openqa.selenium.By;
@@ -48,6 +49,9 @@ public class ActivityStep {
     log.info("Running: I should be able to see recent activities at " + new Date());
     assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/action_bar_root"));
     assertNotNull(driver.findElementsByAccessibilityId("android:id/navigationBarBackground"));
+    assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/container") != null);
+    log.info("ActivityStep: container exist, let's review activities");
+    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/avatar"));
   }
 
   @After

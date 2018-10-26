@@ -24,7 +24,7 @@ public class IssueStep extends BaseStep {
     log.info("Running: I launch the application at " + new Date());
     driver = getDriver();
     assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/bottomNavigation"));
-    //TODO: Send Tap on this element: com.fastaccess.github:id/pinned
+    //TODO: Send Tap on this element: com.fastaccess.github:id/pinned type: android.view.View
   }
 
   @Then("I should be able to see issues")

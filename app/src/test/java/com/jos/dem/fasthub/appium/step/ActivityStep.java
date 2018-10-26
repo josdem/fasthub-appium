@@ -26,7 +26,7 @@ public class ActivityStep extends BaseStep {
   }
 
   @Then("I should be able to see recent activities")
-  public void shouldDisplayCategories() throws Exception {
+  public void shouldDisplayActivitites() throws Exception {
     log.info("Running: I should be able to see recent activities at " + new Date());
     assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/action_bar_root"));
     assertNotNull(driver.findElementsByAccessibilityId("android:id/navigationBarBackground"));

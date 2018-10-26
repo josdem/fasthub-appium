@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Logger;
 
 import cucumber.api.java.en.Then;
@@ -19,19 +20,19 @@ public class IssueStep extends BaseStep {
   private AppiumDriver driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
-  @When("I click on issues")
-  public void shouldOpenTheApplication() throws Exception {
-    log.info("Running: I launch the application at " + new Date());
+  @When("I click on issue")
+  public void shouldClickOnIssues() throws Exception {
+    log.info("Running: I click on issue at " + new Date());
     driver = getDriver();
-    assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/bottomNavigation"));
+    assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/bottomNavigation") != null);
 
     log.info("IssueStep: Issue button exist, let's get tap on it");
-    WebElement issueButton = driver.findElementsByAccessibilityId("com.fastaccess.github:id/pinned");
-    issueButton.click();
+    List<WebElement> elements = driver.findElementsByAccessibilityId("com.fastaccess.github:id/pinned");
+    elements.forEach(it -> log.info("element: " + it));
   }
 
   @Then("I should be able to see issues")
-  public void shouldDisplayCategories() throws Exception {
+  public void shouldDisplayIssues() throws Exception {
     log.info("Running: I should be able to see issues at " + new Date());
     assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/pager") != null);
 

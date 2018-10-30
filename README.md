@@ -21,9 +21,10 @@ Feature testing using Appium for a popular GitHub client FastHub
 **To run the project**
 
 ```bash
-gradle test
+gradle testDebug
 ```
 
 **Read this as reference**
 
 * http://josdem.io/techtalk/android/appium_automation/
+* https://josdem.io/techtalk/android/appium_cucumber_junit5/

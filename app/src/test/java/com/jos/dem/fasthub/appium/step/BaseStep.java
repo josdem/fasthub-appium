@@ -22,7 +22,7 @@ public class BaseStep {
     if(driver == null){
       appiumService.setCapabilities(capabilities);
       driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-      driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     return driver;
   }

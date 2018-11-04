@@ -3,6 +3,7 @@ package com.jos.dem.fasthub.appium.step;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Date;
@@ -28,14 +29,14 @@ public class ActivityStep extends BaseStep {
   @Then("I should be able to see recent activities")
   public void shouldDisplayActivitites() throws Exception {
     log.info("Running: I should be able to see recent activities at " + new Date());
-    assertNotNull(driver.findElementsByAccessibilityId("om.fastaccess.github:"));
-    assertNotNull(driver.findElementsByAccessibilityId("android:id/navigationBarBackground"));
-    assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/container") != null);
+    assertNotNull(driver.findElement(By.id("action_bar_root")));
+    assertNotNull(driver.findElement(By.id("navigationBarBackground")));
+    assumeTrue(driver.findElement(By.id("container")) != null);
 
     log.info("ActivityStep: Container exist, let's get at least one activity");
-    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/avatar"));
-    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/title"));
-    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/date"));
+    assertNotNull(driver.findElement(By.id("avatar")));
+    assertNotNull(driver.findElement(By.id("title")));
+    assertNotNull(driver.findElement(By.id("date")));
   }
 
 }

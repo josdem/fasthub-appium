@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.AppiumDriver;
 
+import com.jos.dem.fasthub.appium.util.ConfigurationReader;
 import com.jos.dem.fasthub.appium.service.AppiumService;
 import com.jos.dem.fasthub.appium.service.impl.AppiumServiceImpl;
 
@@ -21,8 +22,8 @@ public class BaseStep {
   public static AppiumDriver<WebElement> getDriver() throws IOException {
     if(driver == null){
       appiumService.setCapabilities(capabilities);
-      driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+      driver = new AppiumDriver(new URL(ConfigurationReader.getProperty("appium.server")), capabilities);
+      driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigurationReader.getProperty("appium.wait")), TimeUnit.SECONDS);
     }
     return driver;
   }

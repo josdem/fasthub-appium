@@ -29,8 +29,8 @@ public class ActivityStep extends BaseStep {
   @Then("I should be able to see recent activities")
   public void shouldDisplayActivitites() throws Exception {
     log.info("Running: I should be able to see recent activities at " + new Date());
-    assertNotNull(driver.findElement(By.id("action_bar_root")));
-    assertNotNull(driver.findElement(By.id("navigationBarBackground")));
+    assertNotNull(driver.findElement(By.id("toolbar")));
+    assertNotNull(driver.findElement(By.id("bottomNavigation")));
     assumeTrue(driver.findElement(By.id("container")) != null);
 
     log.info("ActivityStep: Container exist, let's get at least one activity");

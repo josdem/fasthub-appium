@@ -25,7 +25,7 @@ public class IssueStep extends BaseStep {
   public void shouldClickOnIssues() throws Exception {
     log.info("Running: I click on issue at " + new Date());
     driver = getDriver();
-    assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/bottomNavigation") != null);
+    assumeTrue(driver.findElement(By.id("bottomNavigation")) != null);
 
     log.info("IssueStep: Issue button exist, let's get tap on it");
     driver.findElement(By.xpath("//android.view.View[contains(@resource-id, 'pinned')]")).click();
@@ -34,11 +34,11 @@ public class IssueStep extends BaseStep {
   @Then("I should be able to see issues")
   public void shouldDisplayIssues() throws Exception {
     log.info("Running: I should be able to see issues at " + new Date());
-    assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/pager") != null);
+    assumeTrue(driver.findElement(By.id("pager")) != null);
 
     log.info("IssueStep: Container exist, let's get at least one issue");
-    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/title"));
-    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/details"));
+    assertNotNull(driver.findElement(By.id("title")));
+    assertNotNull(driver.findElement(By.id("details")));
   }
 
 }

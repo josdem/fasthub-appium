@@ -3,6 +3,7 @@ package com.jos.dem.fasthub.appium.step;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -27,8 +28,7 @@ public class IssueStep extends BaseStep {
     assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/bottomNavigation") != null);
 
     log.info("IssueStep: Issue button exist, let's get tap on it");
-    List<WebElement> elements = driver.findElementsByAccessibilityId("com.fastaccess.github:id/pinned");
-    elements.forEach(it -> log.info("element: " + it));
+    driver.findElement(By.xpath("//android.view.View[contains(@resource-id, 'pinned')]")).click();
   }
 
   @Then("I should be able to see issues")

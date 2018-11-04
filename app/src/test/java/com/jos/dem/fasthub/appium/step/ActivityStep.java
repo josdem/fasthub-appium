@@ -3,7 +3,6 @@ package com.jos.dem.fasthub.appium.step;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Date;
@@ -13,10 +12,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class ActivityStep extends BaseStep {
 
-  private AppiumDriver driver;
+  private AppiumDriver<AndroidElement> driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
   @When("I launch the application")
@@ -28,7 +28,7 @@ public class ActivityStep extends BaseStep {
   @Then("I should be able to see recent activities")
   public void shouldDisplayActivitites() throws Exception {
     log.info("Running: I should be able to see recent activities at " + new Date());
-    assertNotNull(driver.findElementsByAccessibilityId("com.fastaccess.github:id/action_bar_root"));
+    assertNotNull(driver.findElementsByAccessibilityId("om.fastaccess.github:"));
     assertNotNull(driver.findElementsByAccessibilityId("android:id/navigationBarBackground"));
     assumeTrue(driver.findElementsByAccessibilityId("com.fastaccess.github:id/container") != null);
 

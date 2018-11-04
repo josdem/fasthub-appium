@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Date;
@@ -15,10 +14,11 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class IssueStep extends BaseStep {
 
-  private AppiumDriver driver;
+  private AppiumDriver<AndroidElement> driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
   @When("I click on issue")

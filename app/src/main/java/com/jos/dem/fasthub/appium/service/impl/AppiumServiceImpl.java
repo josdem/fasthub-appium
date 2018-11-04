@@ -7,17 +7,17 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.jos.dem.fasthub.appium.service.AppiumService;
+import com.jos.dem.fasthub.appium.util.ConfigurationReader;
 
 public class AppiumServiceImpl implements AppiumService {
 
-  private File path = new File("src/main/res/app-release.apk");
+  private File path = new File(ConfigurationReader.getProperty("application.path"));
 
   public void setCapabilities(DesiredCapabilities capabilities) throws IOException {
-    capabilities.setCapability("deviceName", "Pixel 2");
-    capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
-    capabilities.setCapability(CapabilityType.VERSION, "9.0");
-    capabilities.setCapability("platformName", "Android");
-    capabilities.setCapability("noReset","true");
+    capabilities.setCapability("deviceName", ConfigurationReader.getProperty("device.name"));
+    capabilities.setCapability(CapabilityType.VERSION, ConfigurationReader.getProperty("device.version"));
+    capabilities.setCapability("platformName", ConfigurationReader.getProperty("device.platform"));
+    capabilities.setCapability("noReset", ConfigurationReader.getProperty("application.noreset"));
     capabilities.setCapability("app", path.getCanonicalPath());
   }
 

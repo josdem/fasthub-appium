@@ -21,9 +21,9 @@ public class IssueStep extends BaseStep {
   private AppiumDriver<AndroidElement> driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
-  @When("I click on issue")
+  @When("I click on issues")
   public void shouldClickOnIssues() throws Exception {
-    log.info("Running: I click on issue at " + new Date());
+    log.info("Running: I click on issues at " + new Date());
     driver = getDriver();
     assumeTrue(driver.findElement(By.id("bottomNavigation")) != null);
 

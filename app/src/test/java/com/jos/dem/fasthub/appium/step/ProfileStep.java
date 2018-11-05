@@ -3,14 +3,9 @@ package com.jos.dem.fasthub.appium.step;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import static io.appium.java_client.touch.TapOptions.tapOptions;
-import static io.appium.java_client.touch.WaitOptions.waitOptions;
-import static io.appium.java_client.touch.offset.ElementOption.element;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
@@ -20,7 +15,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidElement;
 
 public class ProfileStep extends BaseStep {

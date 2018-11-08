@@ -44,4 +44,22 @@ public class ProfileStep extends BaseStep {
     assertNotNull(driver.findElement(By.id("avatar")));
   }
 
+  @And("I should be able to see name")
+  public void shouldAbleToSeeFullname() throws Exception {
+    log.info("Running: I should be able to see name at " + new Date());
+    assertNotNull(driver.findElement(By.id("fullname")));
+  }
+
+  @And("I should be able to see username")
+  public void shouldAbleToSeeUsername() throws Exception {
+    log.info("Running: I should be able to see username at " + new Date());
+    assertNotNull(driver.findElement(By.id("username")));
+  }
+
+  @And("I should be able to see description")
+  public void shouldAbleToSeeDescription() throws Exception {
+    log.info("Running: I should be able to see description at " + new Date());
+    assertNotNull(driver.findElement(By.id("description")));
+  }
+
 }

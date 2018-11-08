@@ -5,3 +5,6 @@ Feature: User browse his profile
     When I click on menu
       And I click on profile
     Then I should be able to see avatar
+      And I should be able to see name
+      And I should be able to see username
+      And I should be able to see description

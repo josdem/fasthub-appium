@@ -74,4 +74,34 @@ public class ProfileStep extends BaseStep {
     assertNotNull(driver.findElement(By.id("following")));
   }
 
+  @And("I should be able to see organization")
+  public void shouldAbleToSeeOrganization() throws Exception {
+    log.info("Running: I should be able to see organization at " + new Date());
+    assertNotNull(driver.findElement(By.id("organization")));
+  }
+
+  @And("I should be able to see location")
+  public void shouldAbleToSeeLocation() throws Exception {
+    log.info("Running: I should be able to see location at " + new Date());
+    assertNotNull(driver.findElement(By.id("location")));
+  }
+
+  @And("I should be able to see email")
+  public void shouldAbleToSeeEmail() throws Exception {
+    log.info("Running: I should be able to see email at " + new Date());
+    assertNotNull(driver.findElement(By.id("email")));
+  }
+
+  @And("I should be able to see link")
+  public void shouldAbleToSeeLink() throws Exception {
+    log.info("Running: I should be able to see link at " + new Date());
+    assertNotNull(driver.findElement(By.id("link")));
+  }
+
+  @And("I should be able to see joined")
+  public void shouldAbleToSeeJoined() throws Exception {
+    log.info("Running: I should be able to see joined at " + new Date());
+    assertNotNull(driver.findElement(By.id("joined")));
+  }
+
 }

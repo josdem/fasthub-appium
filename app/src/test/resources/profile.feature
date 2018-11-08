@@ -8,3 +8,5 @@ Feature: User browse his profile
       And I should be able to see name
       And I should be able to see username
       And I should be able to see description
+      And I should be able to see following
+      And I should be able to see followers

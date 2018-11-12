@@ -5,4 +5,5 @@ Feature: User browse organizations
     When I click on menu
       And I click on organizations
     Then I should be able to see organizations
+      And I should be able to go back
 

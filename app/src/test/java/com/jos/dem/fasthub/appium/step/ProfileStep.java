@@ -76,7 +76,7 @@ public class ProfileStep extends BaseStep {
     assertNotNull(driver.findElement(By.id("following")));
   }
 
-  @And("I should be able to see organization")
+  @And("I should be able to see profile organization")
   public void shouldAbleToSeeOrganization() throws Exception {
     log.info("Running: I should be able to see organization at " + new Date());
     assertNotNull(driver.findElement(By.id("organization")));

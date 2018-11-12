@@ -10,7 +10,7 @@ Feature: User browse his profile
       And I should be able to see description
       And I should be able to see following
       And I should be able to see followers
-      And I should be able to see organization
+      And I should be able to see profile organization
       And I should be able to see location
       And I should be able to see email
       And I should be able to see link

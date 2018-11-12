@@ -14,12 +14,12 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class ProfileStep extends BaseStep {
 
-  private AppiumDriver<AndroidElement> driver;
+  private AndroidDriver<AndroidElement> driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
   @When("I click on menu")

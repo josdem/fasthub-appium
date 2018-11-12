@@ -12,12 +12,12 @@ import java.util.logging.Logger;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class ActivityStep extends BaseStep {
 
-  private AppiumDriver<AndroidElement> driver;
+  private AndroidDriver<AndroidElement> driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
   @When("I launch the application")

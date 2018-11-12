@@ -24,7 +24,7 @@ public class ProfileStep extends BaseStep {
   private AndroidDriver<AndroidElement> driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
-  @When("I click on menu")
+  @When("I click on menu to access profile")
   public void shouldClickOnMenu() throws Exception {
     log.info("Running: I click on menu at " + new Date());
     driver = getDriver();
@@ -106,7 +106,7 @@ public class ProfileStep extends BaseStep {
     assertNotNull(driver.findElement(By.id("joined")));
   }
 
-  @And("I should be able to go back")
+  @And("I should be able to go back from profile")
   public void shouldBeAbleToGoBack() throws Exception {
     log.info("Running: I should be able to go back at " + new Date());
     driver.pressKey(new KeyEvent(AndroidKey.BACK));

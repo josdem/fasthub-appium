@@ -24,7 +24,7 @@ public class OrganizationsStep extends BaseStep {
   private AndroidDriver<AndroidElement> driver;
   private Logger log = Logger.getLogger(this.getClass().getName());
 
-  @When("I click on menu")
+  @When("I click on menu to access organizations")
   public void shouldClickOnMenu() throws Exception {
     log.info("Running: I click on menu at " + new Date());
     driver = getDriver();
@@ -40,13 +40,15 @@ public class OrganizationsStep extends BaseStep {
     driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[3]/android.widget.CheckedTextView")).click();
   }
 
-  @Then("I should be able to see avatar")
+  @Then("I should be able to see organizations")
   public void shouldAbleToSeeOrganizations() throws Exception {
     log.info("Running: I should be able to see organizations at " + new Date());
-    assertNotNull(driver.findElement(By.id("")));
+    assumeTrue(driver.findElement(By.id("recycler")) != null);
+    assertNotNull(driver.findElement(By.id("avatarLayout")));
+    assertNotNull(driver.findElement(By.id("title")));
   }
 
-  @And("I should be able to go back")
+  @And("I should be able to go back from organizations")
   public void shouldBeAbleToGoBack() throws Exception {
     log.info("Running: I should be able to go back at " + new Date());
     driver.pressKey(new KeyEvent(AndroidKey.BACK));

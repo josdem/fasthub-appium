@@ -16,6 +16,8 @@ import cucumber.api.java.en.When;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.android.nativekey.AndroidKey;
 
 public class ProfileStep extends BaseStep {
 
@@ -102,6 +104,12 @@ public class ProfileStep extends BaseStep {
   public void shouldAbleToSeeJoined() throws Exception {
     log.info("Running: I should be able to see joined at " + new Date());
     assertNotNull(driver.findElement(By.id("joined")));
+  }
+
+  @And("I should be able to go back")
+  public void shouldBeAbleToGoBack() throws Exception {
+    log.info("Running: I should be able to go back at " + new Date());
+    driver.pressKey(new KeyEvent(AndroidKey.BACK));
   }
 
 }

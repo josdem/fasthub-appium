@@ -15,3 +15,4 @@ Feature: User browse his profile
       And I should be able to see email
       And I should be able to see link
       And I should be able to see joined
+      And I should be able to go back

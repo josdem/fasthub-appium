@@ -1,26 +1,45 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.application'
 
-buildscript {
+ext {
+  cucumberVersion = '1.2.5'
+  appiumJavaClient = '6.1.0'
+  junitJupiterVersion = '5.3.1'
+}
 
-  repositories {
-    google()
-    jcenter()
+android {
+  compileSdkVersion 28
+  defaultConfig {
+    applicationId "com.jos.dem.fasthub.appium"
+    minSdkVersion 15
+    targetSdkVersion 28
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.1'
-
-    // NOTE: Do not place your application dependencies here; they belong
-    // in the individual module build.gradle files
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
 }
 
-allprojects {
-  repositories {
-    google()
-    jcenter()
-  }
-}
-
-task clean(type: Delete) {
-  delete rootProject.buildDir
+dependencies {
+  implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
+  implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+  implementation 'com.android.support:design:28.0.0-rc01'
+  androidTestImplementation 'com.android.support.test:runner:1.0.2'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+  testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+  testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+  implementation 'org.apache.commons:commons-lang3:3.8.1'
+  implementation "info.cukes:cucumber-java:$cucumberVersion"
+  implementation "info.cukes:cucumber-junit:$cucumberVersion"
+  implementation "io.appium:java-client:$appiumJavaClient"
+  implementation 'org.apache.commons:commons-configuration2:2.4'
+  implementation 'commons-beanutils:commons-beanutils:1.9.3'
 }

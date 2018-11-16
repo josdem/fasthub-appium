@@ -1,45 +1,40 @@
-apply plugin: 'com.android.application'
-
-ext {
-  cucumberVersion = '1.2.5'
-  appiumJavaClient = '6.1.0'
-  junitJupiterVersion = '5.3.1'
+buildscript {
+  ext {
+    springBootVersion = '2.1.0.RELEASE'
+    cucumberVersion = '1.2.5'
+    appiumJavaClient = '6.1.0'
+    junitJupiterVersion = '5.3.1'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
 }
 
-android {
-  compileSdkVersion 28
-  defaultConfig {
-    applicationId "com.jos.dem.fasthub.appium"
-    minSdkVersion 15
-    targetSdkVersion 28
-    versionCode 1
-    versionName "1.0"
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-    }
-  }
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.jos.dem.fasthub.appium'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
 }
 
 dependencies {
-  implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
-  implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-  implementation 'com.android.support:design:28.0.0-rc01'
-  androidTestImplementation 'com.android.support.test:runner:1.0.2'
-  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-  testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
-  testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
-  implementation 'org.apache.commons:commons-lang3:3.8.1'
+  implementation('org.springframework.boot:spring-boot-starter-webflux')
+  implementation('org.springframework.boot:spring-boot-starter-tomcat')
+  compileOnly('org.projectlombok:lombok')
   implementation "info.cukes:cucumber-java:$cucumberVersion"
   implementation "info.cukes:cucumber-junit:$cucumberVersion"
+  implementation "info.cukes:cucumber-spring:$cucumberVersion"
   implementation "io.appium:java-client:$appiumJavaClient"
-  implementation 'org.apache.commons:commons-configuration2:2.4'
-  implementation 'commons-beanutils:commons-beanutils:1.9.3'
+  testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+  testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+  testImplementation('org.springframework.boot:spring-boot-starter-test')
+  testImplementation('io.projectreactor:reactor-test')
 }

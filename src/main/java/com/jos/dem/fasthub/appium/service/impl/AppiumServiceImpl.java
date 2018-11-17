@@ -31,7 +31,7 @@ public class AppiumServiceImpl implements AppiumService {
 
   @PostConstruct
   public void setup() throws IOException {
-    File path = new File(ConfigurationReader.getProperty("application.path"));
+    File path = new File(applicationPath);
     capabilities.setCapability("deviceName", deviceName);
     capabilities.setCapability(CapabilityType.VERSION, deviceVersion);
     capabilities.setCapability("platformName", devicePlatform);

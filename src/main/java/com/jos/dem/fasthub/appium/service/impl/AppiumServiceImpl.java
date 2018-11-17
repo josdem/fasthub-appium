@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.jos.dem.fasthub.appium.service.AppiumService;
-import com.jos.dem.fasthub.appium.util.ConfigurationReader;
 
 @Service
 public class AppiumServiceImpl implements AppiumService {

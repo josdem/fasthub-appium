@@ -2,6 +2,7 @@ package com.jos.dem.fasthub.appium.service.impl;
 
 import java.io.File;
 import java.io.IOException;
+import javax.annotation.PostConstruct;
 
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -29,7 +30,7 @@ public class AppiumServiceImpl implements AppiumService {
   private DesiredCapabilities capabilities = new DesiredCapabilities();
 
   @PostConstruct
-  public void setup(){
+  public void setup() throws IOException {
     File path = new File(ConfigurationReader.getProperty("application.path"));
     capabilities.setCapability("deviceName", deviceName);
     capabilities.setCapability(CapabilityType.VERSION, deviceVersion);

@@ -6,10 +6,10 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @PropertySource("classpath:application.properties")
-public class AppiumJugoterapiaApplication {
+public class FasthubAppiumApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppiumJugoterapiaApplication.class, args);
+		SpringApplication.run(FasthubAppiumApplication.class, args);
 	}
 
 }

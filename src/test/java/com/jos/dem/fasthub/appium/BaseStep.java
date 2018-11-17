@@ -1,8 +1,8 @@
-package com.jos.dem.fasthub.appium.step;
+package com.jos.dem.fasthub.appium;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import java.io.IOException;
+import java.net.MalformedURLException;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 

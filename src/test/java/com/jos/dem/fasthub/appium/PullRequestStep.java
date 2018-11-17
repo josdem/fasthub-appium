@@ -1,4 +1,4 @@
-package com.jos.dem.fasthub.appium.step;
+package com.jos.dem.fasthub.appium;
 
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

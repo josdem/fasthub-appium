@@ -9,21 +9,34 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.web.WebAppConfiguration;
+
 import com.jos.dem.fasthub.appium.util.ConfigurationReader;
 import com.jos.dem.fasthub.appium.service.AppiumService;
 import com.jos.dem.fasthub.appium.service.impl.AppiumServiceImpl;
 
+@ContextConfiguration(classes = FasthubAppiumApplication.class)
+@WebAppConfiguration
 public class BaseStep {
 
-  private static AndroidDriver<AndroidElement> driver;
-  private static DesiredCapabilities capabilities = new DesiredCapabilities();
-  private static AppiumService appiumService = new AppiumServiceImpl();
+  @Value("${appium.server}")
+  private String appiumServer;
+  @Value("${appium.wait}")
+  private Long appiumWait;
+  @Value("${appium.timeout}")
+  private Long appiumTimeout;
 
-  public static AndroidDriver<AndroidElement> getDriver() throws IOException {
+  @Autowired
+  private AppiumService appiumService;
+  private AndroidDriver<AndroidElement> driver;
+
+  public AndroidDriver<AndroidElement> getDriver() throws MalformedURLException {
     if(driver == null){
-      appiumService.setCapabilities(capabilities);
-      driver = new AndroidDriver(new URL(ConfigurationReader.getProperty("appium.server")), capabilities);
-      driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigurationReader.getProperty("appium.wait")), TimeUnit.SECONDS);
+      driver = new AndroidDriver(new URL(appiumServer), appiumService.getCapabilities());
+      driver.manage().timeouts().implicitlyWait(appiumWait, TimeUnit.SECONDS);
     }
     return driver;
   }

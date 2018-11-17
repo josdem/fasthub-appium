@@ -6,19 +6,40 @@ import java.io.IOException;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
+
 import com.jos.dem.fasthub.appium.service.AppiumService;
 import com.jos.dem.fasthub.appium.util.ConfigurationReader;
 
+@Service
 public class AppiumServiceImpl implements AppiumService {
 
-  private File path = new File(ConfigurationReader.getProperty("application.path"));
+  @Value("${device.name}")
+  private String deviceName;
+  @Value("${device.version}")
+  private String deviceVersion;
+  @Value("${device.platform}")
+  private String devicePlatform;
+  @Value("${application.noreset}")
+  private String applicationNoreset;
+  @Value("${application.path}")
+  private String applicationPath;
 
-  public void setCapabilities(DesiredCapabilities capabilities) throws IOException {
-    capabilities.setCapability("deviceName", ConfigurationReader.getProperty("device.name"));
-    capabilities.setCapability(CapabilityType.VERSION, ConfigurationReader.getProperty("device.version"));
-    capabilities.setCapability("platformName", ConfigurationReader.getProperty("device.platform"));
-    capabilities.setCapability("noReset", ConfigurationReader.getProperty("application.noreset"));
+  private DesiredCapabilities capabilities = new DesiredCapabilities();
+
+  @PostConstruct
+  public void setup(){
+    File path = new File(ConfigurationReader.getProperty("application.path"));
+    capabilities.setCapability("deviceName", deviceName);
+    capabilities.setCapability(CapabilityType.VERSION, deviceVersion);
+    capabilities.setCapability("platformName", devicePlatform);
+    capabilities.setCapability("noReset", applicationNoreset);
     capabilities.setCapability("app", path.getCanonicalPath());
+  }
+
+  public DesiredCapabilities getCapabilities(){
+    return capabilities;
   }
 
 }

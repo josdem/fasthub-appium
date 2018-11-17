@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.jos.dem.fasthub.appium.util.ConfigurationReader;
 import com.jos.dem.fasthub.appium.service.AppiumService;
 import com.jos.dem.fasthub.appium.service.impl.AppiumServiceImpl;
 
